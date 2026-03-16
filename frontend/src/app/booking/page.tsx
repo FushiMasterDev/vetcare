@@ -1,4 +1,5 @@
 'use client';
+import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useQuery, useMutation } from '@tanstack/react-query';
@@ -29,7 +30,7 @@ type FormData = z.infer<typeof schema>;
 
 const STEPS = ['Dịch vụ & Chi nhánh', 'Bác sĩ & Thời gian', 'Thông tin thú cưng', 'Xác nhận'];
 
-export default function BookingPage() {
+function BookingContent() {
   const [step, setStep] = useState(0);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
@@ -255,4 +256,8 @@ export default function BookingPage() {
       </div>
     </MainLayout>
   );
+}
+
+export default function BookingPage() {
+  return <Suspense fallback={<div>Loading...</div>}><BookingContent /></Suspense>;
 }
