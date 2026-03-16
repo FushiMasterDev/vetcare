@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -262,4 +263,3 @@ export default function BookingPage() {
   return <Suspense fallback={<div>Loading...</div>}><BookingContent /></Suspense>;
 }
 
-export const dynamic = 'force-dynamic';
