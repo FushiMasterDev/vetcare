@@ -152,3 +152,4 @@ export default function HomePage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';

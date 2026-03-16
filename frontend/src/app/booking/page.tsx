@@ -261,3 +261,5 @@ function BookingContent() {
 export default function BookingPage() {
   return <Suspense fallback={<div>Loading...</div>}><BookingContent /></Suspense>;
 }
+
+export const dynamic = 'force-dynamic';

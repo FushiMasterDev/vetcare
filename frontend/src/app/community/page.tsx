@@ -163,3 +163,4 @@ export default function CommunityPage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';

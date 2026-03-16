@@ -108,3 +108,4 @@ export default function ServicesPage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';

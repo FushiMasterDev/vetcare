@@ -131,3 +131,4 @@ export default function RegisterPage() {
     </div>
   );
 }
+export const dynamic = 'force-dynamic';

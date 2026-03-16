@@ -121,3 +121,4 @@ export default function MyAppointmentsPage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';

@@ -65,3 +65,4 @@ export default function BranchesPage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';

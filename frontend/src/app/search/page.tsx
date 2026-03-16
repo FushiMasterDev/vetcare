@@ -153,3 +153,4 @@ export default function SearchPage() {
     </MainLayout>
   );
 }
+export const dynamic = 'force-dynamic';
