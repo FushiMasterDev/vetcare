@@ -2,13 +2,12 @@
 export const dynamic = 'force-dynamic';
 import { Suspense } from 'react';
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { servicesApi, doctorsApi, branchesApi, appointmentsApi } from '@/lib/api';
-import MainLayout from '@/components/layout/MainLayout';
 import { Calendar, Clock, User, MapPin, FileText, CheckCircle, Loader2, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import type { Service, Doctor, Branch } from '@/types';
@@ -35,7 +34,7 @@ function BookingContent() {
   const [step, setStep] = useState(0);
   const [success, setSuccess] = useState(false);
   const router = useRouter();
-  const searchParams = useSearchParams();
+  
 
   const { data: services } = useQuery({ queryKey: ['services'], queryFn: () => servicesApi.getAll().then(r => r.data) });
   const { data: branches } = useQuery({ queryKey: ['branches'], queryFn: () => branchesApi.getAll().then(r => r.data) });

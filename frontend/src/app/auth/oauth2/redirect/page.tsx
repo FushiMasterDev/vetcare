@@ -1,18 +1,19 @@
 'use client';
+export const dynamic = 'force-dynamic';
 import { useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { useAuthStore } from '@/lib/store';
 import { Loader2 } from 'lucide-react';
 import api from '@/lib/api';
 
 export default function OAuth2RedirectPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const { setAuth } = useAuthStore();
 
   useEffect(() => {
-    const token = searchParams.get('token');
-    const refreshToken = searchParams.get('refreshToken');
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token");
+    const refreshToken = urlParams.get("refreshToken");
     if (token && refreshToken) {
       localStorage.setItem('accessToken', token);
       localStorage.setItem('refreshToken', refreshToken);
