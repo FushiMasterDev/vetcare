@@ -42,8 +42,8 @@ function BookingContent() {
   const { register, handleSubmit, watch, control, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
-      serviceId: searchParams.get('serviceId') || '',
-      branchId: searchParams.get('branchId') || '',
+      serviceId: "",
+      branchId: "",
       termsAccepted: false,
     },
   });
